@@ -1,6 +1,7 @@
 <?php
 
 class Smartphone {
+    
     public $marque;
     public $model;
     public $couleur;
