@@ -1,0 +1,8 @@
+
+// Time 30 min 🕒 ---> 14h50
+
+TP: 
+Créer un programme en POO qui permettra de gérer des smartphones,
+le smartphone devra avoir une marque, un nom du model, une couleur, un numéro
+de série. le smartphone devra avoir les Comportements suivant:
+Appeller un numéro, sonner, allumer, éteindre.

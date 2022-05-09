@@ -20,6 +20,7 @@ class Voiture {
 }
 
 $voiture1 = new Voiture("TOYOTA", "Cyril", "Toyota Camry", "Violet"); // créer un objet voiture...
+$voiture2 = new Voiture("SUZUKI", "Cyril", "MT 300", "Magenta"); // créer un objet voiture...
 
 $voiture1->demarrer();
 
