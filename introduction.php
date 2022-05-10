@@ -4,17 +4,28 @@ class Employe{
     // propriété de la Class Employé
     public $nom;
     public $prenom;
-    public $age;
+
+    private $age;
+
     public $salaire;
     public $role;
 
     public function __construct($prenom, $nom, $age, $salaire, $role){
         $this->prenom = $prenom;
         $this->nom = $nom;
-        $this->age = $age;
+        $this->setAge($age);
         $this->role = $role;
         $this->salaire = $salaire;
     }
+
+    public function getAge(){
+        return $this->$age;
+    }
+
+    public function setAge($age){
+        $this->age = $age;
+    }
+
 
     // methode de CLass (Comportement)
     public function sePresenter()
@@ -35,10 +46,13 @@ class Employe{
 } 
 
 //instance de la classe employe
-
 // créer une nouvelle instance de la classe Employé = créer un objet
 
-$employe1 = new Employe("Julien", "Cozic", 24, 2300, "Developpeur Front-End");
+
+$employe1 = new Employe("Julien", "Cozic", 33, 3400, "Developpeur Front-End");
+$employe1->setAge(34);
+
+$employe1->sePresenter();
 
 
 ?>
