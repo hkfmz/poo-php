@@ -78,9 +78,9 @@ $p1 = new Personne("Cozic", "Julien", 27);
 $p2 = new Personne("Macron", "Manu", 32);        // 🎃
 $p3 = new Personne("Vandamme", "Jean Claude", 51);
 
-// $p1->setNom("Rambo");
-// $p1->setPrenom("John");
-// $p1->setAge(25);
+$p1->setNom("Trunk");
+$p1->setPrenom("John");
+$p1->setAge(26);
 
 $p1->presentation();
 

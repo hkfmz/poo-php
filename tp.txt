@@ -1,8 +1,18 @@
 
-// Time 30 min 🕒 ---> 14h50
+// 14h50 ---> 🕓
 
 TP: 
-Créer un programme en POO qui permettra de gérer des smartphones,
-le smartphone devra avoir une marque, un nom du model, une couleur, un numéro
-de série. le smartphone devra avoir les Comportements suivant:
-Appeller un numéro, sonner, allumer, éteindre.
+Créer une classe Fruit composée d'un constructeur 
+et des accésseurs et mutateurs (Getters et Setters) qui permettra de créer 
+plusieurs fruits différents, chaque fruits sera réconnu 
+via les propriétés privée suivantes: 
+           - Nom,
+           - Goût (Sucré, salé, aigre, amère etc...),
+           - Couleur,
+           - prix (de vente)
+NB: 
+- Le prix ne doit pas être inférieur à 2€ 
+  ni supérieur à 50€.
+
+- Le nom, goût, couleur du fruit 
+  qui sera créer doit être des lettres (Chaine de caractères).
