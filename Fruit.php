@@ -28,13 +28,14 @@ public function getNom(){
     return $this->nom;
 }
 public function setNom($nom){
-    if(is_string($nom)){
+
+    if(is_string($nom) AND $nom != ''){
         $this->nom = $nom;
     }else{
-        throw new Exception("Nom invalid !");
+        throw new Exception("Le nom n'est pas valide !");
     }
-}
 
+}
 
     public function description(){  
         echo "Le fruit:$this->nom <br>";
@@ -54,7 +55,6 @@ $f2 = new Fruit("Citron 🍋","Acide","Vert citron", 5);
 $f3 = new Fruit("Grenade ","Sucré","Rouge foncé", 3);
 
 $f1->setPrix(8);
-
 
 $f1->description();
 $f2->description();
