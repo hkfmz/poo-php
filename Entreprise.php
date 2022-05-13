@@ -28,7 +28,7 @@ abstract class Entreprise implements obligationsForEntreprises{
         return $this->confirmation;
     }
 
-    abstract public function contrat($signature);
+
 
     public function setConfirmation($confirmation){
         if(is_bool($confirmation)){
@@ -37,7 +37,8 @@ abstract class Entreprise implements obligationsForEntreprises{
             throw new Exception("🟠 La confirmation doit être un booleen !");
         }
     }
-
+    
+abstract public function contrat($signature);
     //chiffreAffaire
     public function getChiffreAffaire(){
 
@@ -70,13 +71,31 @@ abstract class Entreprise implements obligationsForEntreprises{
 }
 
 class AminataConception extends Entreprise{
-    public function __construct($nom, $chiffreAffaire, $confirmation)
+    private $nombreEmployees;
+
+    public function __construct($nom, $chiffreAffaire, $confirmation, $nombreEmployees)
     {
         Parent::__construct($nom, $chiffreAffaire, $confirmation);
+        $this->setNombreEmployees($nombreEmployees);
+
+    }
+
+    public function getNombreEmployees(){
+        return $this->nombreEmployees;
+    }
+    public function setNombreEmployees($nombreEmployees){
+        $this->nombreEmployees = $nombreEmployees;
     }
 
     public function contrat($a){
 
+    }
+
+    public function description(){
+        echo "Entreprise: ".$this->getNom()." <br>";
+        echo "Chiffre d'affaire: ".$this->getChiffreAffaire()." <br>";
+        echo "Nombre de salariés: ".$this->getNombreEmployees()." <br>";
+        echo "----------------------- <br>";
     }
 
 }
@@ -90,6 +109,7 @@ class YsufConception extends Entreprise{
     public function contrat($a){
         
     }
+
 }
 
 class CyrilConception extends Entreprise{
@@ -101,15 +121,46 @@ class CyrilConception extends Entreprise{
     public function contrat($a){
         
     }
+
 }
 
-$entp1 = new AminataConception("Aminata Conception 🍀", 500000, false);
-$entp2 = new YsufConception("Ysuf Conception 🦜", 200000, true);
-$entp3 = new CyrilConception("Cyril Conception 🐕", 400000, true);
+class Administration{
+
+    public static $secret = "Le secret de l'administration";
+
+    public function payerImpot(CyrilConception $representant){
+        echo "a payé l'impot et taxes...";
+    }
+
+}
+
+$entp1 = new AminataConception("Aminata Conception Sevran 🍀", 300000, true, 700);
+$entp2 = new AminataConception("Aminata Conception Perpignan 🍀", 400000, false, 90);
+$entp3 = new AminataConception("Aminata Conception Paris 🍀", 700000, true, 100);
+$entp4 = new AminataConception("Aminata Conception New York 🍀", 900000, true, 500);
+$entp5 = new AminataConception("Aminata Conception Japan 🍀", 600000, true, 150);
+
+
+$entp1->description();
+$entp2->description();
+$entp3->description();
+$entp4->description();
+
+
+// $entp3 = new CyrilConception("Cyril Conception 🐕", 400000, true);
+// $entp2 = new YsufConception("Ysuf Conception 🦜", 200000, true);
+// $ad = new Administration();
+// $ad->payerImpot($entp3);
 
 $entp1->payerImpotEtTaxe($entp1->getConfirmation());
 $entp2->payerImpotEtTaxe($entp2->getConfirmation());
 $entp3->payerImpotEtTaxe($entp3->getConfirmation());
 
+// $entp1->description();
+// $entp2->description();
+// $entp3->description();
+
+
+// echo Administration::$secret;
 
 ?>
